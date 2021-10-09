@@ -1,0 +1,205 @@
+
+/*
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+*/
+
+body {
+	margin: 0;
+	padding: 0;
+	background: rgba(0,0,0,.03) url(../img/bg01.png) repeat;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 13px;
+	color: #3B3B3B;
+}
+
+h1, h2, h3 {
+	margin: 0px;
+	padding: 0px;
+	letter-spacing: -2px;
+	font-weight: normal;
+	color: #2F6BCF;
+}
+
+h1 {
+	font-size: 2em;
+}
+
+h2 {
+	font-size: 2.4em;
+}
+
+h3 {
+	font-size: 1.6em;
+}
+
+p, ul, ol {
+	margin-top: 0;
+	line-height: 180%;
+}
+
+ul, ol {
+}
+
+a {
+	text-decoration: none;
+	color: #383838;
+}
+
+a:hover {
+}
+
+/* Header */
+
+
+
+#menu-wrapper {
+	overflow: hidden;
+	height: 56px;
+	background: #000000;
+}
+
+#menu {
+	width: 1200px;
+	height: 55px;
+	margin: 0px auto;
+	padding: 0px;
+}
+
+#menu ul {
+	margin: 0;
+	padding: 10px 0px 0px 0px;
+	list-style: none;
+	line-height: normal;
+	text-align: center;
+}
+
+#menu li {
+	display: inline-block;
+	border-color: rgba(255,255,255,.09);
+	border-right: 1px solid;
+}
+
+#menu li:hover{
+	background: #454545;
+}
+
+#menu a {
+	display: block;
+	letter-spacing: 1px;
+	margin: 0px 10px;
+	padding: 10px 20px;
+	text-decoration: none;
+	text-align: center;
+	font-size: 14px;
+	font-weight: normal;
+	color: #FFFFFF;
+	border: none;
+}
+
+#menu a:hover, #menu .current_page_item a {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+
+#menu .current_page_item a {
+	color: sandybrown;
+}
+
+#header {
+	clear: both;
+	width: 1200px;
+	margin: 0px auto;
+}
+
+/* Logo */
+
+#logo {
+	margin: 0px;
+	padding: 30px 0px;
+	color: #000000;
+	text-align: center;
+}
+
+#logo h1, #logo p {
+	margin: 0;
+	padding: 0;
+}
+
+#logo h1 {
+	margin: 0px;
+	padding: 0px;
+	font-size: 3.8em;
+	color: #323030;
+}
+
+#logo p {
+	margin: 0px;
+	padding: 0px;
+	color: #3B3B3B;
+}
+
+#logo p a {
+	color: #3B3B3B;
+}
+
+#footer {
+	margin: 40px auto 0 auto;
+	padding: 1.5em 0em 2.5em 0em;
+	background: rgba(0,0,0,.06);
+}
+
+#footer p {
+	margin: 0;
+	padding-top: 20px;
+	line-height: normal;
+	text-align: center;
+	color: #A0A0A0;
+}
+.recommend_content{width:90%;margin: 20px auto 0 auto;}
+#hot_rank, #new_rank, #guofeng_rank, #light_rank{
+	margin: 20px auto 20px auto;
+	border: 1px solid #66ccff;
+	border-top-width: 2px;
+}
+.rank:first-child{
+	border-bottom: #66ccff 1px solid;
+}
+.rank{
+	height: 40px;
+}
+.rank li{
+	float: left;
+	word-wrap:break-word;
+	word-break:break-all;
+	font-family: Verdana;
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	-o-text-overflow:ellipsis;
+	line-height: 40px;
+}
+.rank li:first-child{
+	width: 8%;
+	padding-left: 2%;
+}
+.rank li:nth-child(2){
+	width: 38%;
+	padding-left: 2%;
+}
+.rank li:nth-child(3){
+	width: 20%;
+}
+.rank li:nth-child(4){
+	width: 20%;
+}
+.rank li:nth-child(5){
+	width: 10%;
+}
+.rank:nth-child(odd){
+	background: #f9f9f6;
+}
+.rank:nth-child(even){
+	background: #fff;
+}

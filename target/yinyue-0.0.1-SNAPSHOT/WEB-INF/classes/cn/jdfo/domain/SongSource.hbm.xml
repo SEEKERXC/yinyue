@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="cn.jdfo.domain.SongSource" table="song_source" schema="yinyue">
+        <id name="id">
+            <column name="id" sql-type="int(11)"/>
+            <generator class="identity"/>
+        </id>
+        <property name="platform">
+            <column name="platform" sql-type="varchar(20)" length="20" not-null="false"/>
+        </property>
+        <property name="url">
+            <column name="url" sql-type="varchar(512)" length="512" not-null="false"/>
+        </property>
+        <property name="songUrl">
+            <column name="song_url" sql-type="varchar(512)" length="512" not-null="false"/>
+        </property>
+        <property name="songId">
+            <column name="song_id" sql-type="int(11)" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

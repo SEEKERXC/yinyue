@@ -1,0 +1,50 @@
+@CHARSET "UTF-8";
+.mid_content{
+	width:1280px;
+	margin:0 auto 0 auto;
+}
+.mid_left{
+	float:left;
+	width:22.5%;
+	height:auto;
+	margin-top: 40px;
+}
+.mid_right{
+	float:right;
+	width:74.5%;
+	height:auto;
+	background: #FFFFFF;
+    box-shadow: 0 0 0 10px rgba(0,0,0,0.06);
+    border: 1px solid rgba(0,0,0,.05);
+    margin-top: 16px;
+	padding-top: 12px;
+}
+
+.recommand_title{
+	height: auto;  
+	margin: 0px auto; 
+	padding-bottom:5px;
+	border-bottom:1px solid #66ccff;
+}
+.more{
+	float:right;
+	font-size:14px;
+	color: #66ccff;
+	padding-top: 10px;
+}
+
+.recommand_content{
+	height:auto;
+	margin:auto;
+	width:90%;
+}
+
+
+.cover img{
+	width:150px;
+	height:150px;
+}
+
+.beneth_cover{
+	width:150px;
+}

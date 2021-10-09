@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="cn.jdfo.domain.SongComment" table="song_comment" schema="yinyue">
+        <id name="id">
+            <column name="id" sql-type="int(11)"/>
+            <generator class="identity"/>
+        </id>
+        <property name="author">
+            <column name="author" sql-type="varchar(256)" length="256" not-null="false"/>
+        </property>
+        <property name="content">
+            <column name="content" sql-type="varchar(5000)" length="5000" not-null="false"/>
+        </property>
+        <property name="time">
+            <column name="time_" sql-type="timestamp" not-null="false"/>
+        </property>
+        <property name="img">
+            <column name="img" sql-type="varchar(512)" length="512" not-null="false"/>
+        </property>
+        <property name="like">
+            <column name="like_" sql-type="int(11)" not-null="false"/>
+        </property>
+        <property name="platform">
+            <column name="platform" sql-type="varchar(64)" length="64" not-null="false"/>
+        </property>
+        <property name="songId">
+            <column name="song_id" sql-type="int(11)" length="11" not-null="true"/>
+        </property>
+        <many-to-one name="songCommentByReply" class="cn.jdfo.domain.SongComment" insert="false" update="false">
+            <column name="reply" not-null="false"/>
+        </many-to-one>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,125 @@
+@CHARSET "UTF-8";
+/*歌单页面样式*/
+.img_container{
+	width: auto;  
+	height: auto;  
+	margin: 20px 20px 0 20px;
+	float:left;
+	border: 1px solid #66ccff
+}
+.cover2{
+	width:200px;
+	height: 200px;
+	margin:2px 2px -1px 2px;
+	border: 1px solid #66ccff
+}
+.title_{
+	color: #66ccff;
+	font-size:20px;
+}
+
+.infos{
+	width: 59%;  
+	height: auto;  
+	margin: 20px auto 0 auto;
+	float:left;
+}
+.top{
+	width:90%;
+	height: auto;  
+	margin: 20px auto 0 auto;
+}
+#middle{
+	width:90%;
+	height: auto;  
+	margin: 0px auto;
+	font-size: 12px;
+}
+#bottom{
+	width:90%;
+	height: auto;  
+	margin: 0px auto;
+}
+#song_list_name{
+	font-family: "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+	font-size: 20px; 
+	color: #21333C;
+}
+#infos p:nth-child(2){
+	font-size: 14px;
+	color:#949494;
+}
+.playcount{
+	margin-left:30px;
+}
+#brief{
+	font-size: 15px;
+	color:#EE1EB5;
+}
+
+#pagediv{
+	text-align:center;
+	margin:0 auto;
+}
+
+
+.songmore{
+	background-image:url(../img/more.png);
+	width:20px;
+	height:20px;
+	background-size:20px 20px;
+	display: block;
+}
+.songmore:hover{
+	opacity:0.4;
+	filter:alpha(opacity=40);
+}
+
+
+/*歌单页面歌曲列表样式*/
+.songListStyle{
+	margin: 20px auto;
+}
+.songListItem{
+	height:40px;
+	border:1px solid #ffffff;
+}
+.songListItem:nth-child(even) {
+	background: #FFF;
+}
+.songListItem:nth-child(odd) {
+	background: #f9f9f6;
+}
+.songListItem:hover{
+	background:#EDF3F9;
+	border:1px solid #cacaca;
+}
+.songListItem li{
+	float:left;
+	word-wrap:break-word;
+	word-break:break-all;
+	font-family: Verdana;
+	padding-top:12px;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	-o-text-overflow:ellipsis;
+	overflow: hidden;
+}
+.songListItem li:nth-child(1){
+	padding-left:12px;
+	width:57%;
+}
+.songListItem li:nth-child(2){
+	width:8%;
+}
+.songListItem li:nth-child(3){
+	width:14%;
+}
+.songListItem li:nth-child(4){
+	padding-left:8px;
+	width:15%;
+}
+.songListItem li:nth-child(5){
+	padding-left:5px;
+	width:2.5%;
+}

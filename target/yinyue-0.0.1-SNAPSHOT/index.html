@@ -1,0 +1,517 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Expires" content="0">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Pragma" content="no-cache">
+<title>全网音乐-都在这里</title>
+	<link rel="shortcut icon" href="img/templogo.png"/>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/base-v1.3.css">
+	<link rel="stylesheet" type="text/css" href="css/mid-v1.0.css">
+	<link rel="stylesheet" type="text/css" href="css/audio.css">
+	<link rel="stylesheet" type="text/css" href="css/form.css">
+	<link rel="stylesheet" type="text/css" href="css/gh-buttons.css">
+	<link rel="stylesheet" type="text/css" href="css/songlist.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery.jqplot.css">
+	<link rel="stylesheet" type="text/css" href="css/jquery.dialogbox.css">
+	<link rel="stylesheet" href="css/style-v1.1.css" media="screen" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="css/search_result-v1.0.css">
+	<link rel="stylesheet" type="text/css" href="css/comment.css">
+	<script src="js/jquery-1.11.2.min.js" type=text/javascript charset="utf-8"></script>
+</head>
+<body>
+<div  id="menu-wrapper">
+	<div id="menu">
+		<ul>
+			<li><a href="javascript:void(0)">我的主页</a></li>
+			<li><a href="javascript:void(0)">排行榜</a></li>
+			<li><a href="javascript:void(0)">歌手</a></li>
+			<li><a href="javascript:void(0)">歌单</a></li>
+			<li><a href="javascript:void(0)">专辑</a></li>
+			<li><a href="javascript:void(0)">客户端</a></li>
+			<li id="login"><a href="javascript:void(0)">登录</a></li>
+			<li id="register"><a href="javascript:void(0)">注册</a></li>
+		</ul>
+	</div>
+</div>
+<div id="header-wrapper">
+	<div id="header">
+		<div id="logo">
+			<h1>DownFire - Music</h1>
+			<p>肖飞（Xiao Fei）的音乐网站</p>
+		</div>
+	</div>
+</div>
+<div class="mid_content">
+	<div class="top2">
+		<div class="top_search">
+			<input type="text" id="search_ipt" placeholder="搜索歌曲，歌手，歌单，专辑...">
+		</div>
+		<div class="clear"></div>
+	</div>
+	<div class="mid_left">
+		
+		<div class="container">
+		  <ul>
+		  
+		    <li class="dropdown">
+		      <a href="#" data-toggle="dropdown">创建的歌单<i class="icon-arrow open"></i></a>
+		      <ul class="dropdown-menu show" id="created">
+		        <li class="dli">
+		        	<div style="cursor:pointer;">
+		        		<div class="gedan_img">
+		        			<img src="img/heart.png">
+		        		</div>
+		        		<div class="dlite">
+		        			<p class="gedan_name" style="color:#000;">喜欢的音乐</p>
+		        			<p class="gedan_count"><span>0</span>首
+		        			</p>
+	        			</div>
+		        	</div>
+				</li>
+		      </ul>
+		      <p class="dli" id="new_songlist" style="color:#000;padding:8px 0 6px 10px;cursor:pointer;">新建歌单</p>
+		    </li>
+		    <li class="dropdown">
+		      <a href="#" data-toggle="dropdown" id="from_web">收藏的歌单<i class="icon-arrow open"></i></a>
+		      <ul class="dropdown-menu show">
+		        <li class="dli1">
+		        	<div>
+		        		<div class="gedan_img">
+		        			<img src="http://p1.music.126.net/oO9XCny2OCD0WCoBezra9g==/2369447557909302.jpg?param=40y40">
+		        		</div>
+		        		<div class="dlite">
+		        			<p class="gedan_name"><a href="#">仙人近侧，怕倚小楼</a></p>
+		        			<p class="gedan_count"><span>99</span>首
+		        			</p>
+	        			</div>
+		        	</div>
+				</li>
+		      </ul>
+		    </li>
+		    <li class="dropdown">
+		      <a href="#" data-toggle="dropdown">喜欢的歌手<i class="icon-arrow close"></i></a>
+		      <ul class="dropdown-menu">
+		        <li><a href="#">Home</a></li>
+		        <li><a href="#">About Us</a></li>
+		        <li><a href="#">Services</a></li>
+		        <li><a href="#">Contact</a></li>
+		      </ul>
+		    </li>
+		  </ul>
+		</div>
+	</div>
+	<div class="mid_right" id="content">
+		<div style="display: none" id="m1">
+			<div class="header">
+				<div style="float: left">
+					搜索<span id="keyword"></span>，
+					总共找到<span id="search_total">0</span><span class="num_type">首歌曲</span>，
+					已加载<span id="number">0</span><span class="num_type">首歌曲</span>
+				</div>
+				<div style="float: right; margin-right: 5px;">当前第<span id="now_page">1</span>页</div>
+			</div>
+			<div class="clear"></div>
+			<div id="searchTypeDiv">
+				<ul>
+					<li tag="song">歌曲</li>
+					<li tag="singer">歌手</li>
+					<li tag="songlist">歌单</li>
+					<li tag="album">专辑</li>
+					<li tag="lyrics">歌词</li>
+					<li tag="mv">MV</li>
+				</ul>
+			</div>
+			<div class="clear"></div>
+			<div id="result">
+				<ul id="searchSongResult" class="songListStyle"></ul>
+			</div>
+			<div class="clear"></div>
+			<div id="pagediv">
+				<button id="prev" class="btn">前页</button>
+				<span id="page">1</span>
+				<button id="next" class="btn">后页</button>
+			</div>
+		</div>
+		<div id="m2" class="recommend_content">
+			<div class="recommand_title">
+				<span style="color: red; font-size: 20px;"><b>全网热歌榜</b></span><span style="color: #adabab; font-size: 12px">（每天0点更新）</span>
+			</div>
+			<div id="main">
+				<ul id="hot_rank">
+					<li class="rank">
+						<ul>
+							<li>&nbsp;</li>
+							<li>歌名</li>
+							<li>歌手</li>
+							<li>专辑</li>
+							<li>全网人气</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div id="page_hot" class="page_div"></div>
+			<div class="recommand_title" style="margin-top: 40px">
+				<span style="color: #9e58ff; font-size: 20px;"><b>全网新歌榜</b></span><span style="color: #adabab; font-size: 12px">（每天0点更新）</span>
+			</div>
+			<div>
+				<ul id="new_rank">
+					<li class="rank">
+						<ul>
+							<li>&nbsp;</li>
+							<li>歌名</li>
+							<li>歌手</li>
+							<li>专辑</li>
+							<li>全网人气</li>
+						</ul>
+					</li>
+					<li class="rank">
+						<ul>
+							<li>排行</li>
+							<li>歌名</li>
+							<li>歌手</li>
+							<li>专辑</li>
+							<li>人气</li>
+						</ul>
+					</li>
+					<li class="rank">
+						<ul>
+							<li>排行</li>
+							<li>歌名</li>
+							<li>歌手</li>
+							<li>专辑</li>
+							<li>人气</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+
+			<div class="recommand_title" style="margin-top: 40px">
+				<span style="color: #66ccff; font-size: 20px;"><b>国风歌曲榜</b></span><span style="color: #adabab; font-size: 12px">（周一、周四0点更新）</span>
+			</div>
+			<div>
+				<ul id="guofeng_rank">
+					<li class="rank">
+						<ul>
+							<li>&nbsp;</li>
+							<li>歌曲</li>
+							<li>歌手</li>
+							<li>专辑</li>
+							<li>全网人气</li>
+						</ul>
+					</li>
+					<li class="rank">
+						<ul>
+							<li>排行</li>
+							<li>歌名</li>
+							<li>歌手</li>
+							<li>专辑</li>
+							<li>人气</li>
+						</ul>
+					</li>
+					<li class="rank">
+						<ul>
+							<li>排行</li>
+							<li>歌名</li>
+							<li>歌手</li>
+							<li>专辑</li>
+							<li>人气</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+
+			<div class="recommand_title" style="margin-top: 40px">
+				<span style="color: #66ccff; font-size: 20px;"><b>轻音乐榜</b></span><span style="color: #adabab; font-size: 12px">（周一、周四0点更新）</span>
+			</div>
+			<div>
+				<ul id="light_rank">
+					<li class="rank">
+						<ul>
+							<li>&nbsp;</li>
+							<li>曲名</li>
+							<li>艺人</li>
+							<li>专辑</li>
+							<li>全网人气</li>
+						</ul>
+					</li>
+					<li class="rank">
+						<ul>
+							<li>排行</li>
+							<li>歌名</li>
+							<li>歌手</li>
+							<li>专辑</li>
+							<li>人气</li>
+						</ul>
+					</li>
+					<li class="rank">
+						<ul>
+							<li>排行</li>
+							<li>歌名</li>
+							<li>歌手</li>
+							<li>专辑</li>
+							<li>人气</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div id="m3" style="display: none">
+            <div class="top">
+                <div class="recommand_title">
+					<span class="title_"><b>我的歌单</b></span>
+                    <span class="more"><span id="songcount" style="padding-top: 2px">0</span>首歌曲</span>
+                </div>
+                <div class="img_container">
+                    <img class="cover2" src=""/>
+                </div>
+                <div class="infos">
+                    <p id="song_list_name"></p>
+                    <p>更新时间：<span id="update_time"></span><span class="playcount">播放次数：</span><span id="playcount">0</span></p>
+                    <div class="button-group">
+                        <a href="#" class="button primary pill">播放全部</a>
+                        <a href="#" class="button pill">添加到播放列表</a>
+                        <a href="#" class="button pill">分享</a>
+                        <a href="#" class="button pill">管理</a>
+                    </div>
+                    <div id="brief">
+                        <p>简介：<span></span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+            <div id="middle" style="margin-top:30px;">
+                <ul id="songListList" class="songListStyle"></ul>
+            </div>
+		</div>
+        <div id="m4" style="display: none">
+            <div class="top">
+                <div class="recommand_title" style="margin: 10px auto 20px auto">
+					<span class="title_"><b>单曲</b></span>
+                </div>
+                <div class="img_container">
+                    <img class="cover2" src="img/1111.jpg"/>
+                </div>
+                <div class="infos">
+                    <p id="song_name">断桥残雪</p>
+                    <p style="margin-top: 15px; font-size: 13px;">歌手：<span id="singer_name"></span></p>
+                    <div style="margin: 10px 0 10px 0; font-size: 13px;"><span style="float: left; color: #949494;">所属专辑：</span><div id="album_name" style="float: left"></div></div>
+                    <div class="clear"></div>
+                    <div class="button-group" style="margin-top: 10px">
+                        <a href="#" class="button primary pill">播放</a>
+                        <a href="#" class="button pill">下一首播放</a>
+                        <a href="#" class="button pill">收藏</a>
+                        <a href="#" class="button pill">评论（<span class="comment_num">0</span>）</a>
+                    </div>
+                    <div id="lyrics">
+                        <span>歌词</span>
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+			<div id="hotrankchart" style="width: 90%; margin: 30px auto 20px auto"></div>
+            <div id="bottom">
+                <div id="hot_comments">
+                    <div class="comment_title">
+                        <span>精选评论（</span>
+                        <span id="hot_num">0</span>
+                        <span>）</span>
+                        <span><img class="c_loading" src="img/loading.gif" style="display: none; width: 18px; height: 18px; margin-top: 5px"></span>
+                        <span style="float: right; font-size: 12px"><span style="color: #949494;">当前页：</span><span id="hc_now_page" style="color: #2c89c6;"></span></span>
+                    </div>
+                    <div class="comments">
+                        <ul></ul>
+                    </div>
+                    <div id="hcp">
+                        <span id="hc_left" class="p_left"></span>
+                        <ul class="comment_pagination">
+                            <li>1</li>
+                            <li>2</li>
+                            <li>3</li>
+                            <li>4</li>
+                            <li>...</li>
+                            <li>11</li>
+                        </ul>
+                        <span id="hc_right" class="p_right"></span>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <div id="recent_comments">
+                    <div class="comment_title">
+                        <span>全部评论（</span>
+                        <span class="comment_num">0</span>
+                        <span>）</span>
+                        <span><img id="rc_loading" class="c_loading" src="img/loading.gif" style="display: none; width: 18px; height: 18px; margin-top: 5px"></span>
+                        <span style="float: right; font-size: 12px"><span style="color: #949494;">当前页：</span><span id="rc_now_page" style="color: #2c89c6;"></span></span>
+                    </div>
+                    <div class="comments">
+                        <ul></ul>
+                    </div>
+                    <div id="rcp">
+                        <span id="rc_left" class="p_left"></span>
+                        <ul class="comment_pagination">
+                            <li>1</li>
+                            <li>2</li>
+                            <li>3</li>
+                            <li>4</li>
+                            <li>...</li>
+                            <li>11</li>
+                        </ul>
+                        <span id="rc_right" class="p_right"></span>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+	</div>
+	<div class="clear"></div>
+</div>
+
+
+
+<!-- 底部栏 -->
+<div id="footer">
+	<p>&copy; 2018 downfire.cn | Program by <a href="http://www.downfire.cn/" target="_blank">DownFire - 肖飞</a> | Design by <a href="http://www.downfire.cn/" target="_blank">DownFire - 肖飞</a></p>
+</div>
+
+<!-- 下面是各种弹出窗口  -->
+<div id="login_dialog"></div>
+<div id="register_dialog"></div>
+<div id="change_own_list_name_dialog"></div>
+<div id="collectSong"></div>
+<div id="btn-dialogBox"></div>
+<div id="delete_songlist_box"></div>
+
+<div class="user_menu">
+	<ul>
+		<li id="user_main">我的主页</li>
+		<li id="user_settings">个人设置</li>
+		<li id="signout">退出</li>
+	</ul>
+</div>
+<div class="search_song_menu">
+	<ul>
+		<li>加入播放栈</li>
+		<li>加入播放列表</li>
+		<li>查看歌手</li>
+		<li>查看专辑</li>
+        <li>查看来源</li>
+		<li>收藏</li>
+        <li>MV</li>
+	</ul>
+</div>
+<div class="search_songlist_menu">
+	<ul>
+		<li>收藏</li>
+		<li>全部播放</li>
+		<li>全部加入播放列表</li>
+		<li>转到原网页</li>
+	</ul>
+</div>
+
+<script src="js/search.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/songlist.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/mask.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/jquery.dialogBox.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/jquery.jqplot.min.js" type="application/javascript" charset="utf-8"></script>
+<script src="js/jqplot.pointLabels.min.js" type="application/javascript" charset="utf-8"></script>
+<script src="js/jqplot.dateAxisRenderer.min.js" type="application/javascript" charset="utf-8"></script>
+<script src="js/jqplot.canvasAxisLabelRenderer.min.js" type="application/javascript" charset="utf-8"></script>
+<script src="js/jqplot.canvasTextRenderer.min.js" type="application/javascript" charset="utf-8"></script>
+<script src="js/login-v1.1.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/song.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/paging.js" type="text/javascript" charset="utf-8"></script>
+<script>
+	$(document).ready(function () {
+	    DJMask.allowAjaxAnni=false;
+		$.ajax({
+			type:"get",
+			url:"simpleRank",
+			data:{type:1,limit:20,offset:0},
+			success:function (data) {
+			    showRank(data,"hot_rank",1);
+				DJMask.allowAjaxAnni=true;
+            },
+			error:function () {
+				DJMask.allowAjaxAnni=true;
+            }
+		});
+		$("#menu").find("> ul > li:nth-child(1) > a").click(function () {
+			window.open("http://www.downfire.cn");
+        });
+		$("#menu").find("> ul > li:nth-child(2) > a").click(function () {
+			showDiv(2);
+        });
+        DJMask.allowAjaxAnni=false;
+        //分页
+		$.ajax({
+			type:"get",
+			url:"rankTotal",
+			success:function (data) {
+                DJMask.allowAjaxAnni=false;
+                $("#page_hot").paging({
+                    pageNo:1,
+                    totalPage: Math.ceil(data/20),
+                    totalSize: data,
+                    callback: function(num) {
+                        DJMask.allowAjaxAnni=true;
+                        $.ajax({
+							type:"get",
+							url:"simpleRank",
+							data:{
+							    type:1,
+								limit:20,
+								offset:(num-1)*20
+							},
+							success:function (data) {
+							    showRank(data,"hot_rank",num);
+                            }
+						});
+                    }
+                });
+            }
+		});
+       function showRank(rankList,tableId,page) {
+           var ul=$("#"+tableId);
+           $(ul).empty().append("<li class=\"rank\">\n" +
+               "\t\t\t\t\t\t<ul>\n" +
+               "\t\t\t\t\t\t\t<li>&nbsp;</li>\n" +
+               "\t\t\t\t\t\t\t<li>歌名</li>\n" +
+               "\t\t\t\t\t\t\t<li>歌手</li>\n" +
+               "\t\t\t\t\t\t\t<li>专辑</li>\n" +
+               "\t\t\t\t\t\t\t<li>全网人气</li>\n" +
+               "\t\t\t\t\t\t</ul>\n" +
+               "\t\t\t\t\t</li>");
+           hotSongs=[];
+           $.each(rankList,function (i,item) {
+               hotSongs.push(item.a);
+               var singer="";
+               var album="";
+               if(item.a.singers){
+                   $.each(item.a.singers,function (i,bb) {
+                       singer+=bb.name+"&nbsp;&nbsp;";
+                   });
+               }
+               if(item.a.albums){
+                   $.each(item.a.albums,function (i,ee) {
+                       album+=ee.name+"&nbsp;&nbsp;";
+                   })
+               }
+               var c="<li class=\"rank\">\n" +
+                   "\t\t\t\t\t\t<ul>\n" +
+                   "\t\t\t\t\t\t\t<li>"+(i+1+20*(page-1))+"</li>\n" +
+                   "\t\t\t\t\t\t\t<li><a href='javascript:void(0)' class='songname' title='"+item.a.name+"'>"+item.a.name+"</a></li>\n" +
+                   "\t\t\t\t\t\t\t<li><a href='javascript:void(0)'>"+singer+"</a></li>\n" +
+                   "\t\t\t\t\t\t\t<li><a href='javascript:void(0)'>"+album+"</a></li>\n" +
+                   "\t\t\t\t\t\t\t<li>"+item.b.degree+"</li>\n" +
+                   "\t\t\t\t\t\t</ul>\n" +
+                   "\t\t\t\t\t</li>";
+               $(ul).append(c);
+           });
+       }
+    });
+</script>
+</body>
+</html>

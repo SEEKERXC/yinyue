@@ -1,0 +1,334 @@
+.header{
+	width:90%;
+	margin:20px auto 0 auto;
+	font-size:13px;
+	color:#ff5bad;
+}
+.header div{
+	margin-bottom: 10px;
+}
+#keyword,#number,#search_total{
+	color:#cc00cc;
+}
+.list{
+	height:40px;
+	width: 90%;
+	margin:0 auto;
+}
+#result{
+	width:90%;
+	margin: 20px auto 0px auto;
+	font-size: 12px;
+}
+
+.list li{
+	height: 23px;
+	margin:0;
+	background-color:#EDF3F9;
+	color:#000000;
+	float: left;
+	padding-left:25px;
+	padding-right:25px;
+	padding-top:5px;
+	padding-bottom:5px;
+	border-left:1px solid #84C0EE; 
+}
+
+.last{
+	border-right:1px solid #84C0EE;
+}
+#pagediv{
+	text-align:center;
+	margin:20px auto 0 auto;
+}
+
+.playsong{
+	float:left;
+	background-image:url(../img/play_alt.png);
+	width:18px;
+	height:18px;
+	background-size:18px 18px;
+	opacity:0.6;
+	filter:alpha(opacity=60);
+	cursor:pointer;
+}
+.plussong{
+	float:left;
+	background-image:url(../img/plus_alt.png);
+	width:18px;
+	height:18px;
+	background-size:18px 18px;
+	margin-left:8px;
+	opacity:0.6;
+	filter:alpha(opacity=60);
+	cursor:pointer;
+}
+.collectSonglist{
+	float:left;
+	background-image:url(../img/plus_alt.png);
+	width:18px;
+	height:18px;
+	background-size:18px 18px;
+	margin-top: 21px;
+	opacity:0.6;
+	filter:alpha(opacity=60);
+	cursor:pointer;
+}
+.songmore{
+	background-image:url(../img/more.png);
+	width:20px;
+	height:20px;
+	background-size:20px 20px;
+	display: block;
+}
+.playsong:hover,.collectSonglist:hover,.plussong:hover{
+	opacity:0.3;
+	filter:alpha(opacity=30);
+}
+.songmore:hover{
+	opacity:0.4;
+	filter:alpha(opacity=40);
+}
+
+
+.btn{
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 10px 4px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 18px;
+    background-color: white; 
+    color: black; 
+    border: 2px solid #4CAF50;
+}
+.btn:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+#searchTypeDiv{
+	width:90%;
+	margin:0 auto;
+	font-size:14px;
+}
+#searchTypeDiv li{
+	float:left;
+	width:16.46%;
+	height:27px;
+	text-align:center;
+	padding-top:6px;
+	cursor:pointer;
+	background:#f8f8f8;
+	border-bottom:1px solid #e7b7b7;
+	border-top:2px solid #b5b5b5;
+}
+#searchTypeDiv li:first-child{
+	border-left:1px solid #e7b7b7;
+}
+#searchTypeDiv li:last-child{
+	border-right:1px solid #e7b7b7;
+}
+
+.singerListStyle{
+	margin: 20px auto;
+}
+.singerListItem{
+	width:20%;
+    height:200px;
+    float: left;
+}
+.singerListItem div,.singerListItem img{
+    width: 150px;
+    height: 150px;
+    margin-left: 6px;
+}
+.singerListItem p{
+    text-align: center;
+    margin-top: 10px;
+}
+
+.albumListStyle{
+	margin: 20px auto;
+}
+.albumListItem{
+	height:60px;
+	border:1px solid #ffffff;
+}
+.albumListItem:nth-child(odd) {
+	background: #FFF;
+}
+.albumListItem:nth-child(even) {
+	background: #f9f9f6;
+}
+.albumListItem:hover{
+	background:#EDF3F9;
+	border:1px solid #cacaca;
+}
+.albumListItem li{
+	float:left;
+	word-wrap:break-word;
+	word-break:break-all;
+	font-family: Verdana;
+	overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    -o-text-overflow:ellipsis;
+}
+.albumListItem li:first-child{/*封面*/
+	padding:5px 0 0 5px;
+	width:60px;
+}
+.albumListItem li:nth-child(2){/*专辑名*/
+	width: 50%;
+	line-height:60px;
+}
+.albumListItem li:nth-child(3){/*操作按钮*/
+	width: 6%;
+}
+.albumListItem li:nth-child(4){/*艺人名*/
+	line-height:60px;
+	width: 18%;
+}
+.albumListItem li:nth-child(5){/*发布时间*/
+	line-height:60px;
+	width: 15%;
+}
+.albumListItem li:nth-child(6){/*评分*/
+	line-height:60px;
+	width: 6%;
+}
+
+/*歌单列表样式*/
+.songlistListStyle{
+	margin: 20px auto;
+}
+.songlistListItem{
+	height:60px;
+	border:1px solid #ffffff;
+}
+.cover{
+	width:50px;
+	height:50px;
+}
+.songlistListItem:nth-child(odd) {
+	background: #FFF;
+}
+.songlistListItem:nth-child(even) {
+	background: #f9f9f6;
+}
+.songlistListItem:hover{
+	background:#EDF3F9;
+	border:1px solid #cacaca;
+}
+.songlistListItem li{
+	float:left;
+	word-wrap:break-word;
+	word-break:break-all;
+	font-family: Verdana;
+	overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    -o-text-overflow:ellipsis;
+	height:60px;
+}
+.songlistListItem li:first-child{
+	width:6.5%;
+}
+.songlistListItem li:nth-child(2){
+	line-height:60px;
+	padding-left: 5px;
+	width:60%;
+}
+.songlistListItem li:nth-child(3){
+	width:5%;
+}
+.songlistListItem li:nth-child(4){
+	line-height:60px;
+	width:14%;
+}
+.songlistListItem li:nth-child(5){
+	width:10%;
+	padding-left:2%;
+	line-height:60px;
+}
+.songlistListItem img{
+	padding: 5px 0 0 5px;
+}
+.search_song_menu, .search_songlist_menu, .songlist_song_menu{
+    position:absolute;
+    z-index:9999;
+    background:#2980B9;
+    box-shadow:0 0 20px 0 rgba(0,0,0,0.50);
+    border-radius:6px 6px 6px 6px;
+    color:#fff;
+    font-size: 11px;
+    cursor: pointer;
+}
+.search_song_menu{
+    width: 90px;
+    height: 160px;
+    display: none;
+}
+.search_song_menu li{
+    padding-left: 5px;
+    height: 20px;
+    line-height: 20px;
+    width: 90px;
+}
+.search_song_menu li:first-child{
+    margin-top: 3px;
+}
+.search_song_menu li:nth-child(3){
+    border-top:solid 1px #84C0EE;
+    margin-top: 3px;
+    padding-top: 3px;
+}
+.search_song_menu li:nth-child(5){
+    border-bottom:solid 1px #84C0EE;
+    margin-bottom: 3px;
+    padding-bottom: 3px;
+}
+.search_song_menu li:last-child{
+    margin-bottom: 5px;
+}
+.search_songlist_menu{
+    width: 120px;
+    height: 100px;
+    display: none;
+}
+.search_songlist_menu li{
+    padding-left: 5px;
+    width: 120px;
+    height: 20px;
+    line-height: 20px;
+}
+.search_songlist_menu li:first-child{
+    margin-top: 3px;
+}
+.search_songlist_menu li:nth-child(2){
+    border-top:solid 1px #84C0EE;
+    margin-top: 3px;
+    padding-top: 3px;
+}
+.search_songlist_menu li:nth-child(3){
+    border-bottom: solid 1px #84C0EE;
+    margin-bottom: 3px;
+    padding-bottom: 3px;
+}
+.search_songlist_menu li:last-child{
+    margin-bottom: 5px;
+}
+.search_song_menu li:hover{
+    width: 85px;
+    box-shadow:0 0 2px rgba(0,0,0,0.50);
+    background:#ae8cff;
+}
+.search_songlist_menu li:hover{
+    width:116px;
+    box-shadow:0 0 2px rgba(0,0,0,0.50);
+    background:#ae8cff;
+}

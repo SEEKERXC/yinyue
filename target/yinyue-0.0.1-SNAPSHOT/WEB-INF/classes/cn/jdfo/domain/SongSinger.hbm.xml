@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="cn.jdfo.domain.SongSinger" table="song_singer" schema="yinyue">
+        <id name="id">
+            <column name="Id" sql-type="int(11)"/>
+            <generator class="identity"/>
+        </id>
+        <property name="songId">
+            <column name="song_id" sql-type="int(11)"/>
+        </property>
+        <property name="singerId">
+            <column name="singer_id" sql-type="int(11)"/>
+        </property>
+    </class>
+</hibernate-mapping>

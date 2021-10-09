@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.c3p0.max_size">5000</property>
+    <property name="hibernate.c3p0.timeout">3</property>
+    <property name="hibernate.show_sql">true</property>
+    <property name="hbm2ddl.auto">update</property>
+      <property name="connection.url">jdbc:mysql://localhost:3306/yinyue</property>
+      <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+      <mapping class="cn.jdfo.domain.Album"/>
+    <mapping resource="cn/jdfo/domain/Album.hbm.xml"/>
+    <mapping class="cn.jdfo.domain.AlbumOuterid"/>
+      <mapping resource="cn/jdfo/domain/AlbumOuterid.hbm.xml"/>
+    <mapping class="cn.jdfo.domain.AlbumSource"/>
+      <mapping resource="cn/jdfo/domain/AlbumSource.hbm.xml"/>
+    <mapping class="cn.jdfo.domain.LoginLog"/>
+      <mapping resource="cn/jdfo/domain/LoginLog.hbm.xml"/>
+    <mapping class="cn.jdfo.domain.Singer"/>
+      <mapping resource="cn/jdfo/domain/Singer.hbm.xml"/>
+    <mapping class="cn.jdfo.domain.Song"/>
+      <mapping resource="cn/jdfo/domain/Song.hbm.xml"/>
+    <mapping class="cn.jdfo.domain.SongAlbum"/>
+      <mapping resource="cn/jdfo/domain/SongAlbum.hbm.xml"/>
+    <mapping class="cn.jdfo.domain.SongComment"/>
+      <mapping resource="cn/jdfo/domain/SongComment.hbm.xml"/>
+    <mapping class="cn.jdfo.domain.SongOuterid"/>
+      <mapping resource="cn/jdfo/domain/SongOuterid.hbm.xml"/>
+    <mapping class="cn.jdfo.domain.SongSinger"/>
+      <mapping resource="cn/jdfo/domain/SongSinger.hbm.xml"/>
+    <mapping class="cn.jdfo.domain.SongSource"/>
+      <mapping resource="cn/jdfo/domain/SongSource.hbm.xml"/>
+    <mapping class="cn.jdfo.domain.Songlist"/>
+      <mapping resource="cn/jdfo/domain/Songlist.hbm.xml"/>
+    <mapping class="cn.jdfo.domain.SonglistSong"/>
+      <mapping resource="cn/jdfo/domain/SonglistSong.hbm.xml"/>
+    <mapping class="cn.jdfo.domain.SonglistUser"/>
+      <mapping resource="cn/jdfo/domain/SonglistUser.hbm.xml"/>
+    <mapping class="cn.jdfo.domain.User"/>
+      <mapping resource="cn/jdfo/domain/User.hbm.xml"/>
+    <mapping class="cn.jdfo.domain.Rank"/>
+      <mapping resource="cn/jdfo/domain/Rank.hbm.xml"/>
+
+
+      <!-- DB schema will be updated if needed -->
+    <!-- <property name="hbm2ddl.auto">update</property> -->
+  </session-factory>
+</hibernate-configuration>

@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="cn.jdfo.domain.Song" table="song" schema="yinyue">
+        <id name="id">
+            <column name="id" sql-type="int(11)"/>
+            <generator class="identity"/>
+        </id>
+        <property name="name">
+            <column name="name" sql-type="varchar(100)" length="100"/>
+        </property>
+        <property name="lyric">
+            <column name="lyric" sql-type="varchar(5000)" length="5000" not-null="false"/>
+        </property>
+        <property name="zuoci">
+            <column name="zuoci" sql-type="varchar(50)" length="50" not-null="false"/>
+        </property>
+        <property name="zuoqu">
+            <column name="zuoqu" sql-type="varchar(50)" length="50" not-null="false"/>
+        </property>
+        <property name="duration">
+            <column name="duration" sql-type="int(11)" not-null="false"/>
+        </property>
+        <property name="commentSum">
+            <column name="comment_sum" sql-type="int(11)" not-null="false"/>
+        </property>
+        <property name="key">
+            <column name="key_" sql-type="varchar(1024)" length="1024" not-null="false"/>
+        </property>
+
+        <set name="songComments" inverse="true" lazy="true">
+            <key>
+                <column name="song_id" not-null="true"/>
+            </key>
+            <one-to-many not-found="ignore" class="cn.jdfo.domain.SongComment"/>
+        </set>
+        <set name="songOuterids" inverse="true" lazy="true">
+            <key>
+                <column name="song_id" not-null="true"/>
+            </key>
+            <one-to-many not-found="ignore" class="cn.jdfo.domain.SongOuterid"/>
+        </set>
+        <set name="songSources" inverse="true" lazy="true">
+            <key>
+                <column name="song_id" not-null="true"/>
+            </key>
+            <one-to-many not-found="ignore" class="cn.jdfo.domain.SongSource"/>
+        </set>
+        <set name="albums" table="song_album" lazy="true" fetch="join">
+            <key column="song_id"/>
+            <many-to-many column="album_id" class="cn.jdfo.domain.Album"/>
+        </set>
+        <set name="songlists" table="songlist_song" lazy="true">
+            <key column="song_id"/>
+            <many-to-many column="songlist_id" class="cn.jdfo.domain.Songlist"/>
+        </set>
+        <set name="singers" table="song_singer" lazy="true">
+            <key column="song_id"/>
+            <many-to-many column="singer_id" class="cn.jdfo.domain.Singer"/>
+        </set>
+    </class>
+</hibernate-mapping>

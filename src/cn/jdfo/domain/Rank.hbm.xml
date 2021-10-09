@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="cn.jdfo.domain.Rank" table="rank" schema="yinyue">
+        <id name="id">
+            <column name="Id" sql-type="int(11)"/>
+            <generator class="identity"/>
+        </id>
+        <property name="key">
+            <column name="key_" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="degree">
+            <column name="degree" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="type">
+            <column name="type" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="updateTime">
+            <column name="update_time" sql-type="timestamp" not-null="true"/>
+        </property>
+        <property name="rnum">
+            <column name="rnum" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="issue">
+            <column name="issue" sql-type="int(11)" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>
